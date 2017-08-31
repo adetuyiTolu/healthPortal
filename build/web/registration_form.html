@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+<title>Registration Form</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	text-align: left;
+	color: #0000FF;
+}
+.style3 {
+	color: #0000FF;
+}
+.style4 {
+	color: #FF0000;
+}
+</style>
+<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//called when key is pressed in textbox
+$("#inputString").keypress(function (e)
+{
+$("#error").hide();
+$("#autoSuggestionsList").hide();
+//if the letter is not digit then display error and don't type anything
+if( e.which!=8 && e.which!=0 && (e.which<48 || e.which>57)&& (e.which<65 || e.which>90)&& (e.which<97 || e.which>122))
+{
+//display error message
+$("#error").html("No Special Characters.Only number & alphabets").show();
+return false;
+}
+});}); 
+function lookup(inputString) {
+if(inputString.length <5) {
+$('#suggestions').show();
+$('#autoSuggestionsList').hide();
+} else {
+$('#suggestions').hide();
+$.post("CheckUsername.jsp",{user: ""+inputString+""},function(data){
+$('#autoSuggestionsList').html(data).show();
+});
+}
+}
+
+</script>
+</head>
+<body>
+<form>
+<h2 class="style2"><strong>Registration Form</strong></h2>
+<h4 class="style4">-------------------------------------------------------------</h4>
+<h4><span class="style3">Enter desired username :</span><input name="Text1" type="text" id="inputString" style="height: 20px" onkeyup="lookup(this.value);"/></h4>
+<div id="suggestions" style="display: none;">Value must be greater than 4 characters</div>
+<div style="display: none;" id="autoSuggestionsList"></div>
+<div style="display: none;" id="error"></div>
+
+</form>
+</body>
+
+</html>

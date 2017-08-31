@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+    <script type="text/javascript" src="jquery-1.4.2.js"></script>
+    <TITLE>Multiple Checkbox Select/Deselect - DEMO</TITLE>
+	<SCRIPT language="javascript">
+	$(function(){
+	 
+		// add multiple select / deselect functionality
+		$("#selectall").click(function () {
+			  $('.case').attr('checked', this.checked);
+		});
+	 
+		// if all checkbox are selected, check the selectall checkbox
+		// and viceversa
+		$(".case").click(function(){
+	 
+			if($(".case").length == $(".case:checked").length) {
+				$("#selectall").attr("checked", "checked");
+			} else {
+				$("#selectall").removeAttr("checked");
+			}
+	 
+		});
+	});
+	</SCRIPT>
+</HEAD>
+<BODY>
+    <H2>Multiple Checkbox Select/Deselect - DEMO</H2>
+<table border="1">
+<tr>
+    <th><input type="checkbox" id="selectall"/></th>
+    <th>Cell phone</th>
+    <th>Rating</th>
+</tr>
+<tr>
+    <td align="center"><input type="checkbox" class="case" name="case" value="1"/></td>
+    <td>BlackBerry Bold 9650</td>
+    <td>2/5</td>
+</tr>
+<tr>
+    <td align="center"><input type="checkbox" class="case" name="case" value="2"/></td>
+    <td>Samsung Galaxy</td>
+    <td>3.5/5</td>
+</tr>
+<tr>
+    <td align="center"><input type="checkbox" class="case" name="case" value="3"/></td>
+    <td>Droid X</td>
+    <td>4.5/5</td>
+</tr>
+<tr>
+    <td align="center"><input type="checkbox" class="case" name="case" value="4"/></td>
+    <td>HTC Desire</td>
+    <td>3/5</td>
+</tr>
+<tr>
+    <td align="center"><input type="checkbox" class="case" name="case" value="5"/></td>
+    <td>Apple iPhone 4</td>
+    <td>5/5</td>
+</tr>
+</table>
+ 
+</BODY>
+</HTML>

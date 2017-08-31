@@ -1,0 +1,28 @@
+<head>
+<title>Current Date and Time</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script src="scripts/jquery-1.4.3.min.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+function  displayTime()
+{
+$.ajax({
+url : "jQdate.jsp",
+success : function (data) {
+$("#content").html(data);
+}
+});
+setTimeout("timeExam()", 1000);
+ }
+</script> 
+</head>
+
+<body onload="displayTime();">
+<table width="100%" >
+<tr><td  width="100%" align="center">
+<div id="content" style="color:blue;font:bold ;"> 
+</div> 
+</td>
+</tr>
+</table>
+</body>
+</html>

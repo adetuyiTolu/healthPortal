@@ -1,0 +1,117 @@
+*
+{
+margin: 0px;
+padding: 0px;
+}
+body
+{
+color: #000;
+background: #fff;
+font: 13px "Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+}
+a
+{
+text-decoration: underline;
+}
+a:hover
+{
+text-decoration: none;
+}
+#wrap
+{
+margin: 15px auto;
+padding: 0;
+width: 640px;
+position: relative;
+}
+
+#slideshow
+{
+background:#FFFFFF;
+background-color: #FFFFFF
+border: 1px solid #fff;
+height: 400px;
+margin: 2px auto;
+position: relative;
+width: 475px;	
+}
+#slideshow ul
+{
+height: 389px;
+left: 2px;
+list-style: none outside none;
+overflow: hidden;
+position: absolute;
+top: 10px;
+width: 459px;
+}
+#slideshow li
+{
+position: absolute;
+display: none;
+z-index: 10;
+}
+#slideshow li:first-child
+{
+display: block;
+z-index: 1000;
+}
+#slideshow .slideActive
+{
+z-index:1000;
+}
+#slideshow canvas
+{
+display: none;
+position: absolute;
+z-index: 100;
+}
+#slideshow .arrow
+{
+height: 1px;
+width: 1px;
+position: absolute;
+background: url('../images/base_bg_2') no-repeat;
+top: 50%;
+margin-top: -43px;
+cursor: pointer;
+z-index: 5000;
+}
+#slideshow .previous
+{
+/*background-position: left top;
+left: 0;*/
+}
+#slideshow .previous:hover
+{
+background-position:left bottom;
+}
+#slideshow .next
+{
+/*background-position:right top;
+right:0;*/
+}
+#slideshow .next:hover
+{
+background-position:right bottom;
+}
+#credit
+{
+clear:both;
+width:600px;
+margin:5px auto;
+padding:0;
+}
+#credit p
+{
+margin:0;
+padding:0;
+color:#ccc;
+font-size:10px;
+font-family:arial;
+}
+#credit p a, #credit p a:hover
+{
+text-decoration:none;
+color:#ccc;
+}
